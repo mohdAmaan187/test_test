@@ -52,7 +52,7 @@ body::-webkit-scrollbar {
 }
 
 .hero_heading_button {
-    width: 220px;
+    width: auto;
     height: 60px;
     font-size: 24px;
     background-color: #000000;
