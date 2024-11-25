@@ -132,3 +132,57 @@ body::-webkit-scrollbar {
 .show-password input[type="checkbox"] {
     cursor: pointer;
 }
+
+
+/* Custom Alert Box Styles */
+.alert-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+.alert-box.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.alert-content {
+    background-color: var(--base-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+}
+
+.alert-content p {
+    font: 500 18px "Kanit";
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.alert-close {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font: 500 16px "Kanit";
+    color: var(--base-variant);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.alert-close:hover {
+    background-color: var(--primary-color);
+}

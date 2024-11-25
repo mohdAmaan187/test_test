@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the buttons, input fields, and containers
+    // Select the necessary elements
     const nextButtonNamemail = document.querySelector('.namemail .next');
     const backButtonPasss = document.querySelector('.passs .back');
     const namemailDiv = document.querySelector('.namemail');
@@ -8,6 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.querySelector('.namemail input[type="email"]');
     const passwordInput = document.querySelector('.passs input[type="password"]:nth-of-type(1)');
     const confirmPasswordInput = document.querySelector('.passs input[type="password"]:nth-of-type(2)');
+    const nextButtonPasss = document.querySelector('.passs .next');
+    const customAlert = document.getElementById('customAlert');
+    const alertMessage = document.getElementById('alertMessage');
+    // const alertClose = document.getElementById('alertClose');
+    let alertTimeout; // To store the timeout ID
+
+    // Function to show the custom alert
+    function showAlert(message) {
+        alertMessage.textContent = message;
+        customAlert.classList.remove('hidden');
+        clearTimeout(alertTimeout); // Clear any existing timeout
+        alertTimeout = setTimeout(() => {
+            hideAlert();
+        }, 3000); // Automatically hide after 5 seconds
+    }
+
+    // Function to hide the custom alert
+    function hideAlert() {
+        customAlert.classList.add('hidden');
+    }
+
+    // Close the alert box manually
+    // alertClose.addEventListener('click', () => {
+    //     hideAlert();
+    //     clearTimeout(alertTimeout); // Clear timeout to avoid conflicts
+    // });
 
     // Initially hide the password section
     passsDiv.classList.add('display-none');
@@ -16,31 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButtonNamemail.addEventListener('click', () => {
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (name && emailRegex.test(email)) {
             namemailDiv.classList.add('display-none');
             passsDiv.classList.remove('display-none');
         } else {
-            alert('Please enter a valid name and email.');
+            showAlert('Please enter a valid name and email address.');
         }
     });
 
-    // Show name/email section only if passwords are valid
+    // Go back to name/email section
     backButtonPasss.addEventListener('click', () => {
         passsDiv.classList.add('display-none');
         namemailDiv.classList.remove('display-none');
     });
 
-    const nextButtonPasss = document.querySelector('.passs .next');
+    // Validate passwords and show success or error
     nextButtonPasss.addEventListener('click', () => {
         const password = passwordInput.value.trim();
         const confirmPassword = confirmPasswordInput.value.trim();
 
         if (password && confirmPassword && password === confirmPassword) {
-            alert('Registration Successful!');
+            showAlert('Registration Successful!');
         } else {
-            alert('Passwords do not match or are empty. Please try again.');
+            showAlert('Passwords do not match or are empty. Please try again.');
         }
     });
 });
