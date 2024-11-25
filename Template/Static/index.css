@@ -30,6 +30,7 @@ body::-webkit-scrollbar {
 
 span {
     transition: 0.01s ease;
+    color: var(--text-hover);
 }
 
 :root {
@@ -117,6 +118,11 @@ span {
     padding-left: 5px;
 }
 
+.when_container {
+    border-left: solid 1px rgb(185, 185, 185);
+    padding-left: 15px;
+}
+
 input[type='date']:in-range::-webkit-datetime-edit-year-field,
 input[type='date']:in-range::-webkit-datetime-edit-month-field,
 input[type='date']:in-range::-webkit-datetime-edit-day-field,
@@ -158,6 +164,7 @@ input[type='date']:in-range::-webkit-datetime-edit-text {
 
 .fas {
     margin: 0px 9px;
+    transition: 0.01s ease;
 }
 
 .search_box {
@@ -168,6 +175,7 @@ input[type='date']:in-range::-webkit-datetime-edit-text {
     min-width: 30%;
     border-radius: 5px;
     border: none;
+    outline: none;
     /* border: solid rgb(194, 194, 194) 1px; */
 }
 
