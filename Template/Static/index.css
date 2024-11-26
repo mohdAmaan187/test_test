@@ -229,20 +229,21 @@ input[type='date']:in-range::-webkit-datetime-edit-text {
         rgba(0,0,0,0)
         );
 }
+
 .fea {
     background-color: var(--base-variant);
-    height: 350px;
-    width: 450px;
+    height: max-content;
+    width: max-content;
+    padding: 20px;
     border-radius: 10px;
     border: none;
     position: absolute;
-    left: calc(400px * 7);
+    left: calc(430px * 7);
     animation-name: scrollleft;
     animation-duration: 40s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-
 
 .rev1{
     animation-delay: calc(40s / 7 * ( 7 - 1 ) * -1);
@@ -266,44 +267,8 @@ input[type='date']:in-range::-webkit-datetime-edit-text {
     animation-delay: calc(40s / 7 * ( 7 - 7 ) * -1);
 }
 
-@keyframes scrollright {
-    to {
-        right:-450px;
-    }
-}
-
-.fea2 {
-    background-color: var(--base-variant);
-    height: 350px;
+.f_text {
+    font: 400 20px "Kanit";
+    color: var(--text-variant);   
     width: 450px;
-    border-radius: 10px;
-    border: none;
-    position: absolute;
-    right: calc(400px * 7);
-    animation-name: scrollright;
-    animation-duration: 40s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-.rev12{
-    animation-delay: calc(40s / 7 * ( 7 - 1 ) * -1);
-}
-.rev22{
-    animation-delay: calc(40s / 7 * ( 7 - 2 ) * -1);
-}
-.rev32{
-    animation-delay: calc(40s / 7 * ( 7 - 3 ) * -1);
-}
-.rev42{
-    animation-delay: calc(40s / 7 * ( 7 - 4 ) * -1);
-}
-.rev52{
-    animation-delay: calc(40s / 7 * ( 7 - 5 ) * -1);
-}
-.rev62{
-    animation-delay: calc(40s / 7 * ( 7 - 6 ) * -1);
-}
-.rev72{
-    animation-delay: calc(40s / 7 * ( 7 - 7 ) * -1);
 }
